@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fly'n High Photography (photo version) — Drone Photography &amp; Aerial Inspections, South Metro Atlanta</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="FAA-licensed drone photography in Pike, Spalding, Coweta, Fayette, Henry, Lamar, Upson, Monroe, Meriwether and Butts Counties, GA. Aerial real estate photos, roof and cell tower inspections, construction progress and landscaping before-and-afters.">
+<meta property="og:title" content="Fly'n High Photography">
+<meta property="og:description" content="Aerial photography &amp; drone inspections — south metro Atlanta, GA.">
+<meta property="og:image" content="assets/gallery-01.jpg">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0d0b; --bg2:#121512; --panel:#171b17; --line:#243024;
+    --ink:#eafff2; --muted:#a8b8ac;
+    --g1:#1e7a2e; --g2:#5fb02f; --g3:#9ccc2a;
+    --grad:linear-gradient(90deg,var(--g1),var(--g2) 55%,var(--g3));
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Josefin Sans",sans-serif;font-weight:400;letter-spacing:.12em;text-transform:uppercase;margin:0}
+  a{color:inherit}
+  img{display:block;max-width:100%}
+  .wrap{width:min(1140px,92vw);margin:0 auto}
+  section{padding:84px 0}
+  .eyebrow{font-family:"Josefin Sans",sans-serif;letter-spacing:.3em;text-transform:uppercase;font-size:.72rem;color:var(--g3);margin-bottom:14px}
+  h2{font-size:clamp(1.5rem,3.4vw,2.3rem);margin-bottom:12px}
+  .lead{color:var(--muted);max-width:620px;margin:0 0 42px;font-size:1.02rem}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:.55rem;padding:.9rem 1.45rem;border-radius:999px;font-weight:600;text-decoration:none;font-size:.95rem;border:1px solid transparent;transition:transform .15s,box-shadow .15s;white-space:nowrap}
+  .btn:active{transform:scale(.97)}
+  .btn-primary{background:var(--grad);color:#07100a;box-shadow:0 8px 28px rgba(95,176,47,.28)}
+  .btn-primary:hover{box-shadow:0 10px 34px rgba(95,176,47,.45)}
+  .btn-ghost{border-color:rgba(234,255,242,.28);background:rgba(11,13,11,.35);backdrop-filter:blur(6px)}
+  .btn-ghost:hover{border-color:var(--g3)}
+  .btn svg{width:18px;height:18px;flex:none}
+
+  /* nav */
+  nav{position:fixed;inset:0 0 auto 0;z-index:50;padding:14px 0;transition:background .3s,backdrop-filter .3s}
+  nav.scrolled{background:rgba(11,13,11,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  nav .brand img{height:58px;width:auto}
+  nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:.9rem}
+  nav ul a{text-decoration:none;color:var(--muted)}
+  nav ul a:hover{color:var(--ink)}
+  nav .btn{padding:.6rem 1.1rem;font-size:.85rem}
+  @media(max-width:760px){nav ul{display:none}}
+
+  /* hero */
+  .hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;overflow:hidden;padding:120px 0 90px}
+  .hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .hero .poster{background:url(assets/gallery-02.jpg) center 70%/cover}
+  .hero .poster.still{animation:drift 28s ease-in-out infinite alternate;transform-origin:center}
+  @keyframes drift{from{transform:scale(1)}to{transform:scale(1.08)}}
+  @media(prefers-reduced-motion:reduce){.hero .poster.still{animation:none}}
+  .hero::after{content:"";position:absolute;inset:0;z-index:1;background:
+    linear-gradient(180deg,rgba(11,13,11,.5) 0%,rgba(11,13,11,.3) 45%,rgba(11,13,11,.65) 80%,var(--bg) 100%)}
+  .hero .wrap{position:relative;z-index:2}
+  .hero img.logo{width:min(720px,88vw);margin:0 auto 26px;filter:drop-shadow(0 6px 30px rgba(0,0,0,.6))}
+  .hero h1{font-size:clamp(1.15rem,2.6vw,1.7rem);letter-spacing:.18em;font-weight:300;line-height:1.5;max-width:820px;margin:0 auto 14px}
+  .hero p{color:#d6e6da;max-width:560px;margin:0 auto 34px;font-size:1rem;text-shadow:0 1px 10px rgba(0,0,0,.6)}
+  .hero .actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  .scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:var(--muted);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase}
+
+  /* trust strip */
+  .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);padding:22px 0}
+  .strip .wrap{display:flex;flex-wrap:wrap;gap:14px 40px;justify-content:center;font-size:.85rem;color:var(--muted)}
+  .strip span b{color:var(--ink);font-weight:600}
+
+  /* airspace notice */
+  .notice{margin:0 0 42px;padding:20px 22px;border:1px solid rgba(156,204,42,.45);border-left:4px solid var(--g3);border-radius:12px;background:rgba(95,176,47,.08);display:flex;gap:16px;align-items:flex-start}
+  .notice svg{width:26px;height:26px;flex:none;color:var(--g3);margin-top:2px}
+  .notice h3{font-size:.9rem;letter-spacing:.14em;margin-bottom:6px}
+  .notice p{margin:0;color:#d6e6da;font-size:.93rem}
+  .notice p+p{margin-top:8px}
+
+  /* services */
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:12px;transition:border-color .2s,transform .2s}
+  .card:hover{border-color:var(--g2);transform:translateY(-3px)}
+  .card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--grad);opacity:.85}
+  .card .icon{width:42px;height:42px;border-radius:10px;background:rgba(95,176,47,.12);display:grid;place-items:center;color:var(--g3)}
+  .card .icon svg{width:22px;height:22px}
+  .card h3{font-size:1rem;letter-spacing:.1em}
+  .card p{color:var(--muted);margin:0;font-size:.93rem;flex:1}
+  .price{display:flex;align-items:baseline;gap:8px;margin-top:4px}
+  .price small{color:var(--muted);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+  .price strong{font-size:1.55rem;font-weight:600;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .card a.book{font-size:.85rem;color:var(--g3);text-decoration:none;font-weight:600}
+  .card a.book:hover{text-decoration:underline}
+  .fineprint{color:var(--muted);font-size:.82rem;margin-top:26px;max-width:760px}
+
+  /* gallery */
+  .gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));grid-auto-rows:220px;grid-auto-flow:dense}
+  .tile{position:relative;border-radius:12px;overflow:hidden;cursor:pointer;background:var(--panel);border:1px solid var(--line)}
+  .tile.wide{grid-column:span 2}
+  .tile.tall{grid-row:span 2}
+  .tile img,.tile video{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .tile:hover img{transform:scale(1.04)}
+  .tile .cap{position:absolute;inset:auto 0 0 0;padding:34px 14px 12px;background:linear-gradient(0deg,rgba(0,0,0,.75),transparent);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#d6e6da}
+  .tile .play{position:absolute;inset:0;display:grid;place-items:center}
+  .tile .play span{width:58px;height:58px;border-radius:50%;background:rgba(11,13,11,.6);border:1px solid rgba(234,255,242,.5);display:grid;place-items:center;backdrop-filter:blur(4px)}
+  .tile .play svg{width:22px;height:22px;margin-left:3px}
+  @media(max-width:620px){.tile.wide{grid-column:span 1}.tile.tall{grid-row:span 1}.gallery{grid-auto-rows:200px}}
+
+  /* lightbox */
+  .lb{position:fixed;inset:0;z-index:100;background:rgba(5,7,5,.94);display:none;place-items:center;padding:20px}
+  .lb.open{display:grid}
+  .lb img,.lb video{max-width:94vw;max-height:86vh;border-radius:8px;box-shadow:0 20px 80px rgba(0,0,0,.8)}
+  .lb button{position:absolute;top:16px;right:16px;background:none;border:1px solid rgba(234,255,242,.3);color:var(--ink);width:44px;height:44px;border-radius:50%;font-size:1.4rem;cursor:pointer}
+
+  /* request form */
+  .request{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .request .wrap{display:grid;gap:48px;grid-template-columns:1fr 1.25fr;align-items:start}
+  @media(max-width:860px){.request .wrap{grid-template-columns:1fr}}
+  .contact-list{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:12px}
+  .contact-list a{display:flex;align-items:center;gap:14px;text-decoration:none;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);transition:border-color .2s}
+  .contact-list a:hover{border-color:var(--g2)}
+  .contact-list svg{width:20px;height:20px;color:var(--g3);flex:none}
+  .contact-list small{display:block;color:var(--muted);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase}
+  form{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:grid;gap:16px;grid-template-columns:1fr 1fr}
+  .f-full{grid-column:1/-1}
+  label{display:grid;gap:6px;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  input,select,textarea{width:100%;font:inherit;font-size:1rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:.8rem .9rem;outline:none}
+  input:focus,select:focus,textarea:focus{border-color:var(--g2);box-shadow:0 0 0 3px rgba(95,176,47,.18)}
+  select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239ccc2a' stroke-width='1.6' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+  textarea{min-height:110px;resize:vertical}
+  form .btn{justify-content:center;width:100%;border:0;cursor:pointer;font-size:1rem}
+  .note{font-size:.78rem;color:var(--muted);margin:0}
+  @media(max-width:560px){form{grid-template-columns:1fr;padding:22px}}
+
+  /* service area tags */
+  .counties{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0;padding:0;list-style:none}
+  .counties li{padding:.45rem .85rem;border:1px solid var(--line);border-radius:999px;background:var(--panel);font-size:.85rem;letter-spacing:.04em;color:#d6e6da}
+  .counties li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--grad);margin-right:8px;vertical-align:middle}
+  .area-block{margin-top:34px}
+  .area-block h3{font-size:.8rem;letter-spacing:.25em;color:var(--g3);margin-bottom:4px}
+  .area-block p{color:var(--muted);font-size:.9rem;margin:0}
+
+  /* footer */
+  footer{padding:54px 0 34px;color:var(--muted);font-size:.88rem}
+  footer .wrap{display:grid;gap:30px;grid-template-columns:1.4fr 1fr 1fr}
+  footer img{height:54px;width:auto;margin-bottom:14px}
+  footer h4{font-family:"Josefin Sans",sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:.72rem;color:var(--g3);margin:0 0 10px;font-weight:400}
+  footer a{text-decoration:none}
+  footer a:hover{color:var(--ink)}
+  footer .legal{grid-column:1/-1;border-top:1px solid var(--line);padding-top:18px;font-size:.78rem;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+  @media(max-width:760px){footer .wrap{grid-template-columns:1fr}}
+
+  /* mobile sticky call bar */
+  .callbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(11,13,11,.9);backdrop-filter:blur(12px);border-top:1px solid var(--line);gap:10px}
+  .callbar .btn{flex:1;justify-content:center;padding:.8rem}
+  @media(max-width:760px){.callbar{display:flex}body{padding-bottom:70px}}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/logo.png" alt="Fly'n High Photography"></a>
+    <ul>
+      <li><a href="#services">Services &amp; Pricing</a></li>
+      <li><a href="#work">Our Work</a></li>
+      <li><a href="#request">Request Service</a></li>
+    </ul>
+    <a class="btn btn-primary" href="tel:+17174170689">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg>
+      717‑417‑0689
+    </a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="poster still" aria-hidden="true"></div>
+  <div class="wrap">
+    <img class="logo" src="assets/logo.png" alt="Fly'n High Photography">
+    <h1>Aerial photography for real estate,<br>construction &amp; inspections</h1>
+    <p>Licensed drone pilot serving ten counties across south metro Atlanta, Georgia.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#request">Request a Service</a>
+      <a class="btn btn-ghost" href="tel:+17174170689">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg>
+        Call
+      </a>
+      <a class="btn btn-ghost" href="sms:+17174170689">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Text
+      </a>
+      <a class="btn btn-ghost" href="https://www.facebook.com/share/1A2ATiuyyp/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8a1 1 0 0 1 0 0z"/></svg>
+        Facebook
+      </a>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</header>
+
+<div class="strip">
+  <div class="wrap">
+    <span><b>FAA Part 107</b> licensed pilot</span>
+    <span><b>Fast turnaround</b> — edited photos delivered quickly</span>
+    <span><b>Up‑front pricing</b>, no surprises</span>
+    <span><b>Local</b> to south metro Atlanta</span>
+    <span><b>FAA airspace checked</b> for every job</span>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <p class="eyebrow reveal">What we do</p>
+    <h2 class="reveal">Services &amp; Pricing</h2>
+    <p class="lead reveal">Clear starting prices for the most common jobs. Larger properties, extra deliverables or travel outside our counties may adjust the final quote — we'll confirm before we fly.</p>
+
+    <div class="notice reveal" id="airspace">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      <div>
+        <h3>Where we can fly is set by the FAA</h3>
+        <p>As a licensed operator we fly only where federal airspace rules allow. Areas near airports — Atlanta Hartsfield‑Jackson, Falcon Field in Peachtree City, Newnan‑Coweta, and the smaller fields around Griffin, Thomaston and Hampton — carry altitude limits or need FAA authorization, which can take time to get; a few spots can't be flown at all. Stadiums, prisons, some government sites and areas under temporary flight restrictions are also off‑limits.</p>
+        <p><strong>What this means for you:</strong> send us the exact address or GPS coordinates of the area you want covered and we'll check the airspace before quoting. If a location can't be flown, we'll tell you up front — no charge, no surprises.</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div>
+        <h3>Aerial Real Estate Photos</h3>
+        <p>Edited high‑resolution aerials that show the whole property, lot lines and neighborhood — the shots that make a listing stand out online.</p>
+        <div class="price"><small>From</small><strong>$135</strong></div>
+        <a class="book" href="#request" data-service="Aerial Real Estate Photos">Request this →</a>
+      </div>
+
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/></svg></div>
+        <h3>Aerial Video Add‑On</h3>
+        <p>A smooth cinematic flyover clip, edited and ready for MLS, Zillow, YouTube or social media. Add it to any photo shoot.</p>
+        <div class="price"><small>From</small><strong>$225</strong></div>
+        <a class="book" href="#request" data-service="Aerial Video Add-On">Request this →</a>
+      </div>
+
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l10-7 10 7"/><path d="M4 11v8h16v-8"/><path d="M8 19v-4h8v4"/></svg></div>
+        <h3>Roof Inspection Photos</h3>
+        <p>Close, detailed imagery of every slope, ridge and flashing — no ladders, no risk. Ideal for homeowners, insurance claims and roofing contractors.</p>
+        <div class="price"><small>From</small><strong>$155</strong></div>
+        <a class="book" href="#request" data-service="Roof Inspection Photos">Request this →</a>
+      </div>
+
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/><path d="M9 11h.01M15 11h.01"/></svg></div>
+        <h3>Construction &amp; Site Progress</h3>
+        <p>Consistent, dated aerials from the same angles each visit so owners, lenders and crews can see progress at a glance. Ask about recurring monthly rates.</p>
+        <div class="price"><small>From</small><strong>$180</strong><small>/ visit</small></div>
+        <a class="book" href="#request" data-service="Construction / Site Progress">Request this →</a>
+      </div>
+
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M12 12c-4 0-7-3-7-7 4 0 7 3 7 7z"/><path d="M12 14c4 0 7-3 7-7-4 0-7 3-7 7z"/></svg></div>
+        <h3>Landscaping &amp; Lawn Care Before/Afters</h3>
+        <p>Matched before‑and‑after aerials that show off your crew's work — perfect for your website, Facebook page and bids.</p>
+        <div class="price"><small>From</small><strong>$110</strong></div>
+        <a class="book" href="#request" data-service="Landscaping / Lawn Care Before & After">Request this →</a>
+      </div>
+
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M12 4v16"/><path d="M4 12h8"/></svg></div>
+        <h3>Before &amp; After Documentation</h3>
+        <p>Renovations, clean‑ups, storm damage, pool installs — any project where the change is the story. Same angles, same altitude, clear results.</p>
+        <div class="price"><small>From</small><strong>$110</strong></div>
+        <a class="book" href="#request" data-service="Before & After Documentation">Request this →</a>
+      </div>
+
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M8 22h8"/><path d="M7 7l5-3 5 3"/><path d="M6 12l6-3 6 3"/><path d="M5 17l7-3 7 3"/></svg></div>
+        <h3>Cell Tower Inspections</h3>
+        <p>Detailed visual inspection imagery of antennas, mounts, cabling and structure without a climb. Priced per site based on height and scope.</p>
+        <div class="price"><strong style="font-size:1.15rem">Call for quote</strong></div>
+        <a class="book" href="#request" data-service="Cell Tower Inspection">Request a quote →</a>
+      </div>
+    </div>
+
+    <p class="fineprint">Prices are starting points for typical residential‑scale jobs inside our service counties and include edited digital files delivered electronically. Weather delays happen — we'll reschedule at no charge.</p>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <p class="eyebrow reveal">Portfolio</p>
+    <h2 class="reveal">Our Work</h2>
+    <p class="lead reveal">A few recent flights. Tap any image or clip to view it full size.</p>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<section class="request" id="request">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow reveal">Get started</p>
+      <h2 class="reveal">Request a Service</h2>
+      <p class="lead reveal" style="margin-bottom:0">Tell us what you need and where. We'll check the FAA airspace for your location first, then reply with a confirmed price and the next available flight window — usually the same day.</p>
+      <ul class="contact-list reveal">
+        <li><a href="tel:+17174170689">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg>
+          <span><small>Call or text</small>717‑417‑0689</span></a></li>
+        <li><a href="mailto:flynhighphoto@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+          <span><small>Email</small>flynhighphoto@gmail.com</span></a></li>
+        <li><a href="https://www.facebook.com/share/1A2ATiuyyp/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8z"/></svg>
+          <span><small>Facebook</small>Message us on Facebook</span></a></li>
+      </ul>
+      <div class="area-block reveal">
+        <h3>Service area</h3>
+        <p>Based south of Atlanta. Standard pricing covers these Georgia counties; just outside? Ask — a small travel fee usually covers it.</p>
+        <ul class="counties"><li>Coweta</li><li>Fayette</li><li>Henry</li><li>Spalding</li><li>Pike</li><li>Lamar</li><li>Butts</li><li>Monroe</li><li>Upson</li><li>Meriwether</li></ul>
+      </div>
+    </div>
+
+    <form class="reveal" action="https://formsubmit.co/flynhighphoto@gmail.com" method="POST" id="reqform">
+      <input type="hidden" name="_subject" value="New service request — Fly'n High website">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" id="nextUrl" value="">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+      <label>Name<input name="Name" required autocomplete="name" placeholder="Your name"></label>
+      <label>Phone<input name="Phone" type="tel" required autocomplete="tel" placeholder="(000) 000‑0000"></label>
+      <label class="f-full">Email<input name="Email" type="email" required autocomplete="email" placeholder="you@example.com"></label>
+      <label class="f-full">Service
+        <select name="Service" id="serviceSelect" required>
+          <option value="" disabled selected>Choose a service…</option>
+          <option>Aerial Real Estate Photos</option>
+          <option>Aerial Video Add-On</option>
+          <option>Roof Inspection Photos</option>
+          <option>Construction / Site Progress</option>
+          <option>Landscaping / Lawn Care Before &amp; After</option>
+          <option>Before &amp; After Documentation</option>
+          <option>Cell Tower Inspection</option>
+          <option>Something else</option>
+        </select>
+      </label>
+      <label class="f-full">Property address<input name="Address" required placeholder="Street address, city, ZIP"></label>
+      <label class="f-full">GPS coordinates (optional, but speeds up our airspace check)<input name="GPS_Coordinates" inputmode="decimal" placeholder="e.g. 33.2468, -84.2641 — long-press the spot in Google or Apple Maps to copy"></label>
+
+      <label>Preferred date<input name="Preferred_Date" type="date"></label>
+      <label>Flexible?
+        <select name="Flexible">
+          <option>Yes, any day that week</option>
+          <option>Weekdays only</option>
+          <option>Weekends only</option>
+          <option>No, this date only</option>
+        </select>
+      </label>
+      <label class="f-full">Tell us briefly what you want done<textarea name="What_You_Need" required placeholder="e.g. Aerial photos of the whole 5-acre property for a listing. Or: roof photos after last week's storm for an insurance claim."></textarea></label>
+      <button class="btn btn-primary f-full" type="submit">Send Request</button>
+      <p class="note f-full">We'll reply by email or phone. No spam, ever.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img src="assets/logo.png" alt="Fly'n High Photography">
+      <p>Professional drone photography and aerial inspection imagery for homeowners, real estate agents, builders and contractors across south metro Atlanta.</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p><a href="tel:+17174170689">717‑417‑0689</a><br>
+      <a href="mailto:flynhighphoto@gmail.com">flynhighphoto@gmail.com</a><br>
+      <a href="https://www.facebook.com/share/1A2ATiuyyp/" target="_blank" rel="noopener">Facebook</a></p>
+    </div>
+    <div>
+      <h4>Service area — Georgia</h4>
+      <ul class="counties" style="margin-top:0"><li>Coweta</li><li>Fayette</li><li>Henry</li><li>Spalding</li><li>Pike</li><li>Lamar</li><li>Butts</li><li>Monroe</li><li>Upson</li><li>Meriwether</li></ul>
+    </div>
+    <div class="legal">
+      <span>© <span id="yr"></span> Fly'n High Photography. All rights reserved.</span>
+      <span>FAA Part 107 certified · Flights conducted in compliance with FAA regulations</span>
+    </div>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a class="btn btn-ghost" href="tel:+17174170689">Call</a>
+  <a class="btn btn-ghost" href="sms:+17174170689">Text</a>
+  <a class="btn btn-primary" href="#request">Request</a>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true"><button id="lbClose" aria-label="Close">×</button><div id="lbBody"></div></div>
+
+<script>
+/* ---------- GALLERY: add new items here ---------- */
+/* type: "image" or "video". thumb is optional for images. size: "wide", "tall" or "" */
+const GALLERY = [
+  {type:"video", src:"assets/clip-0399.mp4", poster:"assets/clip-0399-poster.jpg", caption:"Aerial Video", size:"wide"},
+  {type:"image", src:"assets/gallery-01.jpg", thumb:"assets/gallery-01-thumb.jpg", caption:"Rural & Agricultural Property", size:"tall"},
+  {type:"image", src:"assets/gallery-02.jpg", thumb:"assets/gallery-02-thumb.jpg", caption:"Land & Acreage", size:""},
+  {type:"video", src:"assets/hero.mp4", poster:"assets/gallery-03.jpg", caption:"Commercial Property", size:"wide"},
+];
+/* -------------------------------------------------- */
+
+const g = document.getElementById('gallery');
+GALLERY.forEach((it,i)=>{
+  const t = document.createElement('div');
+  t.className = 'tile ' + (it.size||'');
+  t.dataset.i = i;
+  if (it.type==='video'){
+    t.innerHTML = `<img src="${it.poster}" alt="${it.caption}" loading="lazy"><div class="play"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l14 8-14 8z"/></svg></span></div><div class="cap">${it.caption}</div>`;
+  } else {
+    t.innerHTML = `<img src="${it.thumb||it.src}" alt="${it.caption}" loading="lazy"><div class="cap">${it.caption}</div>`;
+  }
+  t.addEventListener('click',()=>openLB(it));
+  g.appendChild(t);
+});
+const lb=document.getElementById('lb'), lbBody=document.getElementById('lbBody');
+function openLB(it){
+  lbBody.innerHTML = it.type==='video'
+    ? `<video src="${it.src}" controls autoplay playsinline poster="${it.poster}"></video>`
+    : `<img src="${it.src}" alt="${it.caption}">`;
+  lb.classList.add('open'); document.body.style.overflow='hidden';
+}
+function closeLB(){ lb.classList.remove('open'); lbBody.innerHTML=''; document.body.style.overflow=''; }
+document.getElementById('lbClose').onclick=closeLB;
+lb.addEventListener('click',e=>{ if(e.target===lb) closeLB(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLB(); });
+
+/* nav background on scroll */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
+
+/* reveal on scroll */
+const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* "Request this" links preselect the service */
+document.querySelectorAll('a.book').forEach(a=>a.addEventListener('click',()=>{
+  const s=document.getElementById('serviceSelect');
+  [...s.options].forEach(o=>{ if(o.text===a.dataset.service) s.value=o.value; });
+}));
+
+/* form: thank-you redirect back to this page */
+document.getElementById('nextUrl').value = location.origin + location.pathname.replace(/index\.html$/,'').replace(/\/?$/,'/') + 'thanks.html';
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+
+</script>
+</body>
+</html>
